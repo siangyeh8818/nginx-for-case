@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+    con-pool-nginx:
+       image: nginx-test:v3
+       restart: always
+#       network_mode: host
+       ports:
+         - "8088:8088"
+       privileged: true
+       environment:
+         - CONNECTION_LIMIT=65536
+         - DESTINATION_IP=172.16.106.130
+         - DESTINATION_PORT=8080
+         - NGINXPORT=8088
+         - KEEPLOVE_VALUE=1000
+         - NGINX_WORKER=2

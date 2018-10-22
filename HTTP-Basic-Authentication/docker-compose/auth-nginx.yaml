@@ -1,0 +1,16 @@
+version: '3.1'
+services:
+    auth-nginx:
+       image: siangyeh8818/nginx-auth:test
+       restart: always
+       network_mode: host
+       ports:
+         - "19200:19200"
+       environment:
+         - CONNECTION_LIMIT=65536
+         - DESTINATION_IP=172.16.106.131
+         - DESTINATION_PORT=9200
+         - NGINXPORT=19200
+         - NGINX_WORKER=2
+         - HTTP_AUTH_USER=elasticsearch
+         - HTTP_AUTH_PASSWORD=Emotibot1
