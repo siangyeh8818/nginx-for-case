@@ -1,0 +1,21 @@
+version: '3.1'
+services:
+    nginx:
+       image: siangyeh8818/nginx:multi-tcp-1.5
+       restart: always
+#       network_mode: host
+       ports:
+         - "31122:31122"
+         - "31119:31119"
+         - "31121:31121"
+       privileged: true
+       environment:
+         - CONNECTION_LIMIT=65536
+         - K8SWORKIP=10.22.14.11,10.22.15.11,10.22.14.12,10.22.15.12
+         - NGINXPORT=31122
+         - NGINXPORT2=31119
+         - NGINXPORT3=31121
+         - KEEPLOVE_VALUE=1000
+         - NGINX_WORKER=3
+       volumes:
+       - /etc/localtime:/etc/localtime
