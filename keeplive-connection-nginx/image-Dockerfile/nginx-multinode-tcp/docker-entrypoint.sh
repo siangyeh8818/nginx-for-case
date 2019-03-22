@@ -77,6 +77,10 @@ sed -i s"/<NGINXPORT2>/$NGINXPORT2/g" /etc/nginx/nginx.conf
 sed -i s"/<NGINXPORT3>/$NGINXPORT3/g" /etc/nginx/nginx.conf
 sed -i s"/<NGINXPORT4>/$NGINXPORT4/g" /etc/nginx/nginx.conf
 sed -i s"/<NGINXPORT5>/$NGINXPORT5/g" /etc/nginx/nginx.conf
+sed -i s"/<INTERNEL-NGINXPORT2>/$INTERNEL_NGINXPORT2/g" /etc/nginx/nginx.conf
+sed -i s"/<INTERNEL-NGINXPORT3>/$INTERNEL_NGINXPORT3/g" /etc/nginx/nginx.conf
+sed -i s"/<INTERNEL-NGINXPORT4>/$INTERNEL_NGINXPORT4/g" /etc/nginx/nginx.conf
+sed -i s"/<INTERNEL-NGINXPORT5>/$INTERNEL_NGINXPORT5/g" /etc/nginx/nginx.conf
 
 cat /etc/nginx/nginx.conf
 nginx -t
